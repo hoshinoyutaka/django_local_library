@@ -1,0 +1,32 @@
+{% extends 'catalog/base_generic.html' %}
+
+{% block title %}
+    <title>Local Library Home</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Local Library Home</h1>
+    <p>
+        Welcome to LocalLibrary, a website developed by <em>Future Django Developer</em>!
+    </p>
+    <h2>Dynamic content</h2>
+    <p>The library has the following record counts:</p>
+    <ul>
+        <li><strong>Books:</strong> {{ num_books }}</li>
+        <li><strong>Copies:</strong> {{ num_instances }}</li>
+        <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+        <li><strong>Authors:</strong> {{ num_authors }}</li>
+        <li><strong>Genres:</strong> {{ num_genres }}</li>
+        <li><strong>Algebra Books:</strong> {{ num_books_algebra }}</li>
+    </ul>
+    <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+    {% if user.is_authenticated %}
+        <p><em style="font-size:larger">Logged-in as:</em><br/>
+           Username: <strong>{{user.username}}</strong><br/>
+           Email: <strong>{{user.email}}</strong><br/>
+           Id: <strong>{{user.id}}</strong></p>
+        <p>You can <a href="{% url 'logout' %}">logout</a> if you like.</p>
+    {% else %}
+        <p>You can <a href="{% url 'login' %}">login</a> if you like.</p>
+    {% endif %}
+{% endblock %}

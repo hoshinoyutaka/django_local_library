@@ -1,0 +1,71 @@
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+nav {
+    font-size: x-large;
+    height: 3em;
+    background-color: aqua;
+}
+nav ul {
+    position:relative;
+    list-style-type: none;
+}
+nav li {
+    display: inline-block;
+    vertical-align: middle; 
+}
+nav li a {
+    text-decoration: none;
+    color: magenta;
+    font-weight: bold;
+}
+.next {
+    position: absolute;
+    right: 1%;
+    top: 55%;
+}
+.back {
+    position: absolute;
+    left: 1%;
+    top: 55%;
+}
+
+.block {
+    position: absolute;
+    padding: 5px;
+    width: 25%;
+}
+div#one {
+    border: 5px orange solid;
+    top:0;
+    left:0;
+}
+div#two {
+    border: 5px lightgreen solid;
+    top:0;
+    right:0;
+}
+div#three {
+    border: 5px yellow solid;
+    top:0;
+    left:0;
+}
+div#four {
+    border: 5px navy solid;
+    top:0;
+    right:0;
+}
+p#link {
+    text-align:center;
+    position: relative;
+    top: 40vh;
+
+}
+p#link a {
+    text-decoration: none;
+    background-color: red;
+    color:white;
+    font-weight: bold;
+    padding:5px;
+}

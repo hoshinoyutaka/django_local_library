@@ -1,0 +1,26 @@
+{% extends 'catalog/base_generic.html' %}
+
+{% block title %}
+    <title>Book Create/Update</title>
+{% endblock %}
+
+{% block head %}
+    <style>
+        .errorlist {
+            color:red;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1>Book Form</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit" class="btn btn-primary">
+        <input type="button" value="Cancel" class="btn btn-primary" onclick="window.location='{% url 'book-list' %}'; return false;">
+    </form>
+
+{% endblock %}
