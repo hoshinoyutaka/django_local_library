@@ -30,12 +30,12 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('catalog/', include('catalog.urls')),
     path('', RedirectView.as_view(url='catalog/')),   # Root '/' redirects to 'catalog/'
-    re_path("^catalog/static/(?P<path>.*)$", serve, {
-                                            'document_root': settings.STATIC_ROOT, 
-                                            'show_indexes': True
-                                            }, name='static'),
-    
+    # re_path("^catalog/static/(?P<path>.*)$", serve, {
+    #                                         'document_root': settings.STATIC_ROOT, 
+    #                                         'show_indexes': True
+    #                                         }, name='static'),
 
 ]
 
-# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL),   # to urlpath handled with serve
+# urlpatterns+= static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # another way to manually handle static files with serve
+  
